@@ -69,16 +69,22 @@ Cohen's D is an example of effect size.  Other examples of effect size are:  cor
 
 You will see effect size again and again in results of algorithms that are run in data science.  For instance, in the bootcamp, when you run a regression analysis, you will recognize the t-statistic as an example of effect size.
 
+- Answered, see the appropriate file in repo.
+
 ### Q2. [Think Stats Chapter 3 Exercise 1](3-1-actual_biased.md) (actual vs. biased)
 This problem presents a robust example of actual vs biased data.  As a data scientist, it will be important to examine not only the data that is available, but also the data that may be missing but highly relevant.  You will see how the absence of this relevant data will bias a dataset, its distribution, and ultimately, its statistical interpretation.
+
+- Answered, see the appopriate file in repo.
 
 ### Q3. [Think Stats Chapter 4 Exercise 2](4-2-random_dist.md) (random distribution)  
 This questions asks you to examine the function that produces random numbers.  Is it really random?  A good way to test that is to examine the pmf and cdf of the list of random numbers and visualize the distribution.  If you're not sure what pmf is, read more about it in Chapter 3.  
 
+- Answered, see the appropriate file in repo.
+
 ### Q4. [Think Stats Chapter 5 Exercise 1](5-1-blue_men.md) (normal distribution of blue men)
 This is a classic example of hypothesis testing using the normal distribution.  The effect size used here is the Z-statistic. 
 
-
+- Answered, see the appropriate file in repo.
 
 ### Q5. Bayesian (Elvis Presley twin) 
 
@@ -86,14 +92,29 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Answer:
+>>We are specifically looking for the chance Elvis has an indentical twin, so we have to look at all the possible outcomes of being a twin. M=Male, F=Female
+>> Identical twins are either M-M or F-F, so the probability of having identical brothers is: 
+```python
+ident_bros = (1/2)*(1/300)
+```
+>> Fraternal twins can be M-F, F-M, M-M, F-F, so the probability of having twin brothers is: 
+```python
+frat_bros = (1/4)*(1/125)
+```
+>>Now we have the probability of either twin type occuring with brothers, we focus on the chance of being identical twin brothers:
+```python
+twin_iden_bros = ident_bros / (ident_bros + frat_bros)
+print(twin_iden_bros)
+```
+>> We get 45.45% chance. This is 5/11 chance.
 
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Answer: In Bayesian statistics, a 'prior' is used, where the probability a hypothesis is true before the data is considered is used.  Frequentist statistics does not allow for a prior and only uses the likelihood of the hypothesis provided the data.  While the Bayesian statistics uses probabilities for both hypotheses and data, frequentist stats doesn't allow for either and only speak in hypothesis testing (reject/accept null).
 
 ---
 
